@@ -1,0 +1,1 @@
+-D"sonar.projectKey=sonarqube-test-run" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=d8832c047c153511676c1b73fbb87b7bef66c183"

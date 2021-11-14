@@ -46,13 +46,13 @@ export class InfoService implements OnApplicationBootstrap {
             .        /  \\     _   _  | |_    ___  
             .       / _  \\   | | | | | __|  / _ \\ 
             .      / ___  \\  | |_| | | |_  | (_) |
-            .     /_/   \\_\\  \\__,_| \\__| \\___/                 
+            .     /_/   \\_\\  \\__,_|   \\__|  \\___/                 
         `;
         const { host, httpsOptions, nodeEnv, port, serviceHost, servicePort } =
             nodeConfig;
         const isK8s = k8sConfig.detected;
         const kubernetesStr = isK8s
-            ? `Kubernetes: BUCH_SERVICE_HOST=${serviceHost}, BUCH_SERVICE_PORT=${servicePort}`
+            ? `Kubernetes: AUTO_SERVICE_HOST=${serviceHost}, AUTO_SERVICE_PORT=${servicePort}`
             : 'N/A';
 
         this.#logger.info(stripIndent(banner));
