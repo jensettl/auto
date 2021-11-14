@@ -155,7 +155,8 @@ export class AutoReadService {
         // bei findOne(query) wird null zurueckgeliefert, falls nichts gefunden
         // lean() liefert ein "Plain JavaScript Object" statt ein Mongoose Document
         // eslint-disable-next-line prettier/prettier
-        const autos = await this.#autoModel.find( //NOSONAR
+        const autos = await this.#autoModel.find(
+            //NOSONAR
             dbFilter as FilterQuery<AutoDocument>,
         ); //NOSONAR
         this.#logger.debug('find: autos=%o', autos);

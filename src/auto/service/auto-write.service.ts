@@ -151,7 +151,11 @@ export class AutoWriteService {
         //    document.updateOne(bedingung)
         const options = AutoWriteService.UPDATE_OPTIONS;
         // eslint-disable-next-line max-len, prettier/prettier
-        const updated = await this.#autoModel.findByIdAndUpdate(new ObjectID(id), auto, options); //NOSONAR
+        const updated = await this.#autoModel.findByIdAndUpdate(
+            new ObjectID(id),
+            auto,
+            options,
+        ); //NOSONAR
         if (updated === null) {
             this.#logger.debug('update: Kein Auto mit id=%s', id);
             return new AutoNotExists(id);

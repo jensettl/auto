@@ -40,7 +40,7 @@
     "prepack": "npm run build && npm run copy-resources",
     "pack": "pack build juergenzimmermann/auto:1.0.0 --builder paketobuildpacks/builder:base",
     "pack:inspect": "pack inspect juergenzimmermann/auto:1.0.0",
-    "prettier": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "prettier": "prettier --write \"src/**/*.ts\"",
     "revealjs": "asciidoctor-revealjs extras/doc/folien/folien.adoc",
     "snyk:auth": "echo https://app.snyk.io/account && snyk auth",
     "snyk": "snyk test",
