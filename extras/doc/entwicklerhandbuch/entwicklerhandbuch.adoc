@@ -14,7 +14,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 = Entwickler/innen/handbuch
-Jürgen Zimmermann <Juergen.Zimmermann@h-ka.de>
+Gruppe 4, Jens Ettl, Ines Rodrigues, Joschua Schuhmacher, Amandus von Bornhaupt
 :doctype: book
 :toc: left
 :sectanchors:
@@ -39,15 +39,13 @@ IMPORTANT: Copyright (C) 2020 - present Jürgen Zimmermann, Hochschule Karlsruhe
 
 === Der Applikationsserver im Überblick
 
-bla bla
-
 .Use Cases
 [plantuml,use-cases,svg]
 ----
 include::use-cases.puml[]
 ----
 
-bla bla
+Auf den Nest Applikatonsserver kann über die zwei Schnittstellen, REST und GraphQL, zugegriffen werden. Der Datenbankserver basiert auf MongoDB.
 
 .Komponentendiagramm
 [plantuml,komponenten,svg]
@@ -57,42 +55,51 @@ include::komponenten.puml[]
 
 === Die REST-Schnittstelle
 
-bla bla
+Ist REST eine API?
+REST- (Representational State Transfer) bzw. RESTful-API ist ein Application-Program-Interface-Typ (API-Typ), 
+der webbasierte Apps in der Kommunikation miteinander unterstützt. Hierfür werden die HTTP-Methoden GET,POST,PUT,PATCH,DELETE genutzt.
 
 .Controller für die REST-Schnittstelle
-[plantuml,BuchController,svg]
+[plantuml,AutoController,svg]
 ----
-include::BuchController.puml[]
+include::AutoController.puml[]
 ----
 
 === Die GraphQL-Schnittstelle
 
-bla bla
+GraphQL ist eine Abfragesprache und serverseitige Laufzeitumgebung für Anwendungsprogrammierschnittstellen (APIs), 
+die es sich zur Aufgabe gemacht hat, den Kunden genau die Daten zu liefern, die sie anfordern, und nicht mehr. - RedHat
+
+Eine mögliche Abfrage wäre zum Beispiel:
+query ExampleQuery {
+  autos {
+    id
+    verbrauch
+    marke
+    preis
+  } 
+}
 
 .Resolver für die GraphQL-Schnittstelle
-[plantuml,BuchResolver,svg]
+[plantuml,AutoResolver,svg]
 ----
-include::BuchResolver.puml[]
+include::AutoResolver.puml[]
 ----
 
 === Der Anwendungskern
 
-bla bla
-
 .Anwendungskern
-[plantuml,BuchService,svg]
+[plantuml,AutoService,svg]
 ----
-include::BuchService.puml[]
+include::AutoService.puml[]
 ----
 
 === Klasse für Entities und MongoDB-Dokumente
 
-bla bla
-
 .Entity und Document
-[plantuml,Buch,svg]
+[plantuml,Auto,svg]
 ----
-include::Buch.puml[]
+include::Auto.puml[]
 ----
 
 == Programmierrichtlinien für TypeScript und JavaScript
