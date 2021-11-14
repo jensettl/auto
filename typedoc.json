@@ -1,0 +1,24 @@
+{
+    "out": "extras/doc/api",
+    "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
+    "excludePrivate": true,
+    "intentionallyNotExported": [
+      "DbConfig",
+      "AutoIdVersion",
+      "Env",
+      "GraphQlConfig",
+      "JwtConfig",
+      "K8sConfig",
+      "NodeConfig",
+      "Links",
+      "CustomErrorMessages",
+      "Id",
+      "Login",
+      "LoginInput",
+      "src/auto/service/auto-file.service.ts:FindResult"
+    ],
+    "validation": {
+      "invalidLink": true
+    }
+}
