@@ -24,7 +24,8 @@ pipeline {
     agent {
         docker {
             // https://www.debian.org/releases: Bullseye = Debian 11
-            image 'node:17.0.1-bullseye'
+            // image 'node:17.0.1-bullseye'
+            image 'node:16.10.0-buster'
             //image 'node:16.13.0-bullseye'
             // https://stackoverflow.com/questions/62330354/jenkins-pipeline-alpine-agent-apk-update-error-unable-to-lock-database-permis
             // https://stackoverflow.com/questions/42630894/jenkins-docker-how-to-control-docker-user-when-using-image-inside-command/51986870#51986870
@@ -33,7 +34,7 @@ pipeline {
             // fuer "apt-get install ..."
             args '--user root:root'
 
-            // node:...-bullseye : in /etc/passwd gibt es "node" mit uid=1000
+            // node:...-buster : in /etc/passwd gibt es "node" mit uid=1000
             //args '--user 1000:1000'
         }
     }
@@ -41,9 +42,9 @@ pipeline {
     // Umgebungsvariable:
     environment {
         // Atlas:
-        DB_HOST = 'cluster0.5br9r.mongodb.net'
-        DB_USER = 'admin'
-        DB_PASS = 'admin'
+        DB_HOST = 'cluster0.?????.mongodb.net'
+        DB_USER = '?????'
+        DB_PASS = '?????'
         DB_POPULATE = true
         DB_POPULATE_FILES = true
 
@@ -91,6 +92,8 @@ pipeline {
                 // https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
                 // https://www.debian.org/distrib/packages
                 // https://packages.debian.org/buster/nodejs
+                // sh 'curl -sL https://deb.nodesource.com/setup_current.x | bash -; apt-get install --yes nodejs'
+
                 sh 'cat /etc/passwd'
                 sh 'id'
                 // sh 'apt-get install --yes sudo=1.8.27-1+deb10u3'
@@ -99,16 +102,16 @@ pipeline {
                 // sh 'apt upgrade'
                 // sh 'apt install sudo'
 
-                sh 'curl --silent --location https://deb.nodesource.com/setup_17.x | bash -; apt-get install --yes nodejs'
+                sh 'curl --silent --location https://deb.nodesource.com/setup_16.x | bash -; apt-get install --yes nodejs'
 
-                sh 'node --version'
-                sh 'npm i -g npm@8.1.2'
-                sh 'npm --version'
+                // sh 'node --version'
+                sh 'npm i -g npm@7.24.0'
+                // sh 'npm --version'
 
                 // https://packages.debian.org/stable/python
                 // https://packages.debian.org/stable/python/python3
                 // https://packages.debian.org/bullseye/python3
-                sh 'apt-get install --yes python3=3.9.2-3'
+                sh 'apt-get install --yes python3=3.7.3-1'
                 // sh 'python --version'
 
                 // https://docs.docker.com/engine/install/debian/#install-from-a-package
@@ -116,7 +119,9 @@ pipeline {
                 // https://packages.debian.org/bullseye/docker.io
                 // sh 'curl --silent --location https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/docker-ce_20.10.9~3-0~debian-bullseye_amd64.deb > /tmp/docker.deb; sudo dpkg -i /tmp/docker.deb'
                 // https://medium.com/@manav503/how-to-build-docker-images-inside-a-jenkins-container-d59944102f30
-                sh 'apt-get install --yes --no-install-recommends docker.io=20.10.5+dfsg1-1+b5'
+                sh 'apt-get install --yes --no-install-recommends docker.io=18.09.1+dfsg1-7.1+deb10u3'
+                sh 'node --version'
+                sh 'npm --version'
                 sh 'docker --version'
 
                 script {
