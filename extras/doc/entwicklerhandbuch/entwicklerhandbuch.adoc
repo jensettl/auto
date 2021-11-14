@@ -45,7 +45,9 @@ IMPORTANT: Copyright (C) 2020 - present Jürgen Zimmermann, Hochschule Karlsruhe
 include::use-cases.puml[]
 ----
 
-Auf den Nest Applikatonsserver kann über die zwei Schnittstellen, REST und GraphQL, zugegriffen werden. Der Datenbankserver basiert auf MongoDB.
+Über die zwei Schnittstellen, REST und GRAPHQL kann man Abfragen an den Nest basierten Applikatonsserver stellen.
+
+Der Datenbankserver basiert auf MongoDB.
 
 .Komponentendiagramm
 [plantuml,komponenten,svg]
@@ -55,8 +57,7 @@ include::komponenten.puml[]
 
 === Die REST-Schnittstelle
 
-Ist REST eine API?
-REST- (Representational State Transfer) bzw. RESTful-API ist ein Application-Program-Interface-Typ (API-Typ), 
+REST- bzw. RESTful-API ist ein Application-Program-Interface-Typ (API-Typ), 
 der webbasierte Apps in der Kommunikation miteinander unterstützt. Hierfür werden die HTTP-Methoden GET,POST,PUT,PATCH,DELETE genutzt.
 
 .Controller für die REST-Schnittstelle
