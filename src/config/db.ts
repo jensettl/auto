@@ -43,7 +43,7 @@ const dbPopulateFiles = dbConfigEnv.populateFiles?.toLowerCase() === 'true';
 // "mongodb+srv://" statt "mongodb://" fuer eine "DNS seedlist" z.B. bei "Replica Set"
 // https://docs.mongodb.com/manual/reference/write-concern
 const url = atlas
-    ? `mongodb+srv://${user}:${pass}@${host}/${dbName}?replicaSet=Cluster0-shard-0&w=majority`
+    ? `mongodb+srv://${user}:${pass}@${host}/${dbName}?replicaSet=atlas-wg7mvv-shard-0&w=majority`
     : `mongodb://${user}:${pass}@${host}/${dbName}?authSource=admin`;
 
 interface DbConfig {
