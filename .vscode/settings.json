@@ -13,10 +13,10 @@
       "fileUrl": "http://localhost:3000/file"
     },
     "heroku": {
-      "restUrl": "https://gener-iert-12345.herokuapp.com/api",
-      "authUrl": "https://gener-iert-12345.herokuapp.com/auth",
-      "graphQlUrl": "https://gener-iert-12345.herokuapp.com/graphql",
-      "fileUrl": "https://gener-iert-12345.herokuapp.com:3000/file"
+      "restUrl": "https://murmuring-basin-92229.herokuapp.com/api",
+      "authUrl": "https://murmuring-basin-92229.herokuapp.com/auth",
+      "graphQlUrl": "https://murmuring-basin-92229.herokuapp.com/graphql",
+      "fileUrl": "https://murmuring-basin-92229.herokuapp.com:3000/file"
     }
   }
 }
